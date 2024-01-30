@@ -1,0 +1,24 @@
+server:
+  servlet:
+    context-path: /api
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/googleauth?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password: phj@3473
+
+security:
+  oauth2:
+    client:
+      registration:
+        google:
+          client-id: 30796921504-plip806b4p5tcnbcl867slfggrvk745d.apps.googleusercontent.com
+          client-secret: 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
+          scope:
+            - email
+            - profile
