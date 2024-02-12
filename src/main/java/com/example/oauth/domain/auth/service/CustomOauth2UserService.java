@@ -1,5 +1,6 @@
 package com.example.oauth.domain.auth.service;
 
+import com.example.oauth.domain.auth.presentation.dto.response.CustomOAuth2User;
 import com.example.oauth.domain.auth.presentation.dto.response.OAuth2Response;
 import com.example.oauth.domain.auth.presentation.dto.response.google.GoogleResponse;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
@@ -23,6 +24,7 @@ public class CustomOauth2UserService extends DefaultOAuth2UserService {
       oAuth2Response = new GoogleResponse(oAuth2User.getAttributes());
     }
 
-    return null;
+    String role = "ROLE_USER";
+    return new CustomOAuth2User(oAuth2Response, role);
   }
 }
