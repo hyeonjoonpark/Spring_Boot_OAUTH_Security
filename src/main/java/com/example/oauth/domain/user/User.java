@@ -13,6 +13,7 @@ public class User {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String userName;
+  @Setter
   private String email;
   private String role;
 
@@ -22,9 +23,5 @@ public class User {
     this.userName = userName;
     this.email = email;
     this.role = role;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
   }
 }

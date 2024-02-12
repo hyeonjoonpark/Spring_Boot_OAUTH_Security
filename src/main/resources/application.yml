@@ -14,15 +14,3 @@ spring:
 
   main:
     allow-bean-definition-overriding: true
-
-  # Google Oauth 설정
-  security:
-    oauth2:
-      client:
-        registration:
-          google:
-            client-id: 502658428939-lnst504rtgb6pcagd5ujn5qmv3ah0pkd.apps.googleusercontent.com
-            client-secret: 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
-            redirect-uri: http://localhost:8080/login/oauth2/code/google
-            authorization-grant-type: authorization_code
-            scope: profile, email
