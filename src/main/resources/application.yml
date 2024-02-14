@@ -1,6 +1,8 @@
-server:
-  servlet:
-    context-path: /api
+#server:
+#  servlet:
+#    context-path: /api
+
+# context-path 때문에 thymeleaf 가 작동을 안하는 거였음
 
 spring:
   jpa:

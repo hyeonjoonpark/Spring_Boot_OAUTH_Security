@@ -24,12 +24,14 @@ public class SecurityConfig {
       .httpBasic(AbstractHttpConfigurer::disable)
       .authorizeHttpRequests(
         auth -> auth
-          .requestMatchers("/", "/oauth2/**", "/login/**").permitAll()
+          .requestMatchers("/", "/oauth2/**", "/api/login/**", "/login/**").permitAll()
           .anyRequest().authenticated()
       )
       .oauth2Login((oauth2) -> oauth2
         .userInfoEndpoint((userInfoEndpointConfig) ->
-          userInfoEndpointConfig.userService(customOAuth2UserService)));
+          userInfoEndpointConfig.userService(customOAuth2UserService))
+        .defaultSuccessUrl("/login-sucess")
+      );
 
     return http.build();
   }
