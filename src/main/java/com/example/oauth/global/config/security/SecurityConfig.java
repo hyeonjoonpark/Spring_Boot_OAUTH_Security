@@ -28,6 +28,7 @@ public class SecurityConfig {
           .anyRequest().authenticated()
       )
       .oauth2Login((oauth2) -> oauth2
+        .loginPage("/login") // 커스텀 로그인 페이지
         .userInfoEndpoint((userInfoEndpointConfig) ->
           userInfoEndpointConfig.userService(customOAuth2UserService))
         .defaultSuccessUrl("/home")

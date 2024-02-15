@@ -16,3 +16,6 @@ spring:
 
   main:
     allow-bean-definition-overriding: true
+
+jwt:
+  secret: this-is-jwt-secret-key-for-HS256-authentication-for-project

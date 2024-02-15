@@ -1,5 +1,6 @@
 package com.example.oauth.domain.auth.presentation.dto.response;
 
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.core.user.OAuth2User;
@@ -30,9 +31,5 @@ public class CustomOAuth2User implements OAuth2User {
   public String getName() {
 
     return oAuth2Response.getName();
-  }
-
-  public String getUserName() {
-    return oAuth2Response.getProvider() + " " + oAuth2Response.getProviderId();
   }
 }
