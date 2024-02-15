@@ -21,12 +21,7 @@ public class CustomOAuth2User implements OAuth2User {
   public Collection<? extends GrantedAuthority> getAuthorities() {
     Collection<GrantedAuthority> collection = new ArrayList<>();
 
-    collection.add(new GrantedAuthority() {
-      @Override
-      public String getAuthority() {
-        return role;
-      }
-    });
+    collection.add((GrantedAuthority) () -> role);
 
     return collection;
   }
